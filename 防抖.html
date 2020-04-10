@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>防抖</title>
+</head>
+<body>
+    <input id="input1" type="text">
+    <script>
+        //监听一个输入框，文字变化后触发change事件
+        //直接监听键盘事件，会频繁触发change事件
+        //防抖：用户输入结束或暂停时，触发change事件
+        function  debounce(fn, delay) {
+            let timer = null;
+            return function () {
+                if(timer){
+                    clearTimeout(timer)
+                }
+                timer = setTimeout(() => {
+                    fn.apply(this,arguments)
+                    timer = null
+                },delay)
+            }
+        }
+        const inpu1=document.getElementById('input1')
+        input1.addEventListener('keyup',debounce(() => {
+            console.log(input1.value)
+        },600))
+    </script>
+</body>
+</html>
