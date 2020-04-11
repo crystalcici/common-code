@@ -19,7 +19,7 @@
                     clearTimeout(timer)
                 }
                 timer = setTimeout(() => {
-                    fn.apply(this,arguments)
+                    fn.apply(this,arguments) //下面函数的事件一开始是传入return的函数里的，但是我们希望他传进后面的function里，所以改变参数的指向
                     timer = null
                 },delay)
             }
