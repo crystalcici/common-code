@@ -4,9 +4,9 @@ var obj ={};
 var obj1 = Object.assign({},obj)
 //
 Array.prototype.concat()
-let arr1=[1,2,3,4]
-let arr2=arr1.concat();
+var arr1=[1,2,3,4]
+var arr2=arr1.concat();
 //
 Array.prototype.slice()
-let arr1=[1,2,3,4]
-let arr2=arr1.slice();
+var arr1=[1,2,3,4]
+var arr2=arr1.slice();
