@@ -12,6 +12,6 @@ const getJson = function (url) {
                 }
             }
         };
-        xhr.send()
+        xhr.send();
     })
 };
