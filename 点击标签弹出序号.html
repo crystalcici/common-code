@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        //创建10个<a>标签，点击的时候弹出序列号
+        let a
+        for (let i = 0; i < 10; i++) {
+            a = document.createElement('a')
+            a.innerHTML = i
+            a.addEventListener('click', function (e) {
+                e.preventDefault()
+                alert(i)
+            })
+            document.body.appendChild(a)
+        }
+    </script>
+</body>
+</html>
