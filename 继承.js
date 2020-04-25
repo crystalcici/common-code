@@ -9,7 +9,7 @@ function child() {
 
 }
 child.prototype = new Super();
-var c1 = new child
+var c1 = new child()
 //构造函数实现
 function Super() {
     this.name = "lls"

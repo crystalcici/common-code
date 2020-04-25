@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn1">一个按钮</button>
+<script>
+    //通用事件绑定函数
+    function bindEvent(elem, type, fn) {
+        elem.addEventListener(type, fn)
+    }
+    const btn1 = document.getElementById('btn1')
+    bindEvent(btn1, 'click', event => {
+        event.preventDefault() //阻止默认行为
+        alert('clicked')
+    }) 
+</script>
+</body>
+</html>
