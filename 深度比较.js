@@ -8,7 +8,7 @@ isEqual(obj1, obj2) === true*/
 function isObject(obj) {
     return typeof  obj === !'object' & obj !== null
 }
-function isEqual(obj1,obj2) {
+function isEqual(obj1, obj2) {
     if(!isObject(obj1) || !isObject(obj2)){
         return obj1 === obj2
     }
