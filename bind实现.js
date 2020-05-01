@@ -1,11 +1,11 @@
-Function.prototype.myBind = function (content) {
-    //保存当前函数的this
-    const fn = this;
-    //保存原先参数
-    const args = [...arguments].slice(1);
+Function.prototype.myBind = function () {
+    //将参数拆解为数组
+    const args = Array.prototype.slice.call(arguments)
+    //获取this(数组第一项)
+    const t = args.shift()
+    //fn1.bind 中的fn1
+    const self = this
     return function () {
-        //再次获取新参数
-        const  newArgs = [...arguments];
-        return fn.apply(content,args.concat(newArgs))
+        return self.apply(t,args)
     }
 }
