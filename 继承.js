@@ -19,4 +19,28 @@ function child() {
     Super.call(this)
 }
 var a = new child();
-console.log(a.name);
+//寄生组合继承
+function Person(name) {
+    this.name = name
+}
+Person.prototype.sayName = function () {
+
+}                                            // 公有方法
+function Student() {
+    Person.call(this,name)
+    this.grade = grade;
+}
+Student.prototype = Object.create(Person.prototype)
+Student.prototype.constructor = Student;
+//Class 继承
+class Animal{
+    constructor(color){
+        this.color = color
+    }
+}
+class Dog extends Animal{
+    constructor(color,name) {
+        super(color);
+        this.name = name
+    }
+}
