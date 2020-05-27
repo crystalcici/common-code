@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>控件</ul>
+    <script>
+        setTimeout(()=>{
+            const total = 10000;
+            const once = 20;
+            const loopCount =total / once;
+            let countOfRender =0;
+            let ul = document.querySelector('ul');
+            function add() {
+                const fragment = document.createDocumentFragment();
+                for(let i=0;i<once;i++){
+                    const li = document.createElement('li');
+                    li.innerText = Math.floor(Math.random()*total);
+                    fragment.appendChild(li)
+                }
+                ul.appendChild(fragment);
+                countOfRender += 1;
+                loop();
+            }
+            function loop() {
+                if(countOfRender < loopCount){
+                    window.requestAnimationFrame(add);
+                }
+            }
+            loop();
+        },0)
+    </script>
+</body>
+</html>
