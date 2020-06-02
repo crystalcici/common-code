@@ -9,17 +9,17 @@ function query(url) {
     return res[2]
 }
 //根据api
+//http://127.0.0.1:8881/01-hash.html?a=100&b=20#/aaa/bbb
 function  URLParser(url){
     const a = document.createElement('a')
     a.href = url;
     return {
-        protocol : a.protocol,
-        username : a.username,
-        password : a.password,
-        hostname : a.hostname,
-        port : a.port,
-        pathname : a.pathname,
-        search : a.search,
-        hash : a.hash
+        protocol : a.protocol,              //'http:'
+        hostname : a.hostname,              //'127.0.0.1'
+        host: a.host,                       //'127.0.0.1:8881'
+        port : a.port,                      //'8881'
+        pathname : a.pathname,              //'01-hash.html'
+        search : a.search,                  //'?a=100&b=20'
+        hash : a.hash                       //'#/aaa/bbb'
     }
 }
