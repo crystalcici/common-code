@@ -20,3 +20,12 @@ for(var i=o;i<list.length;i++){
         }
     }(i),true)
 }
+//闭包打印1-9
+for(var i=0;i<10;i++){
+    setTimeout((function(i){
+        return () => {
+            console.log(i)
+        }
+    })(i),1000)
+}
+
