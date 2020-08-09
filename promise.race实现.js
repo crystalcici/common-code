@@ -1,5 +1,11 @@
-Promise._race = promises => new Promise((resolve, reject) => {
-    promises.forEach(promise => {
-        promise.then(resolve, reject)
+Promise.race = function(promises) {
+    return new Promise(function(resolve, reject) {
+        for (var i = 0; i < promises.length; i++) {
+            Promise.resolve(promises[i]).then(function(value) {
+                return resolve(value)
+            }, function(reason) {
+                return reject(reason)
+            })
+        }
     })
-})
+}

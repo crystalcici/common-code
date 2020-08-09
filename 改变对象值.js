@@ -5,5 +5,6 @@ let target={
 let handler = {
     get: (obj,prob) => prop.x = 20
 }
-target = new Proxy(target,handler)
+target = new Proxy(target,handler);
+console.log(target)
 

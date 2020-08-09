@@ -11,13 +11,13 @@
     var obj = {}
     Object.defineProperty(obj,'txt',{
         get:function () {
-            return txt
+            return txt;
         },
         set:function (newVal) {
             document.getElementById('input1').value = newVal;
             document.getElementById('show').innerText = newVal
         }
-    })
+    });
     document.getElementById('input1').addEventListener('keyup',function (e) {
         obj.txt = e.target.value
     })
