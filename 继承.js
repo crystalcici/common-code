@@ -30,7 +30,7 @@ function Student() {
     Person.call(this,name)
     this.grade = grade;
 }
-Student.prototype = Object.create(Person.prototype)
+Student.prototype = new Person();
 Student.prototype.constructor = Student;
 //Class 继承
 class Animal{
